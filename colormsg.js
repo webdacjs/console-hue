@@ -1,12 +1,15 @@
 const shouldStringify = ['Object', 'Array']
 const msgTypes = require('./msgTypes')()
 
-function getStr (msg) {
-    return shouldStringify.includes(msg.constructor.name)
-        ? JSON.stringify(msg)
-        : msg
+function getStr (msg, original = false) {
+  if (!msg || original) {
+    return msg
+  } else if (shouldStringify.includes(msg.constructor.name)) {
+    return JSON.stringify(msg)
+  }
+  return msg
 }
 
-module.exports = function (type, msg) {
-    return `${msgTypes[type]}${getStr(msg)}${msgTypes['log']}`
+module.exports = function (type, msg, original) {
+  return `${msgTypes[type]}${getStr(msg, original)}${msgTypes['log']}`
 }

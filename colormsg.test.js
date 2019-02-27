@@ -24,3 +24,8 @@ test('Testing stringifying Objects', () => {
   const res = getColorMsg('log', {msg: 'this is a log'})
   expect(res.constructor.name).toBe('String')
 })
+
+test('Testing undefined message', () => {
+  const res = getColorMsg('log')
+  expect(res.constructor.name).toBe('String')
+})

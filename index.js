@@ -4,8 +4,8 @@ const getColorMsg = require('./colormsg.js')
 const msgTypes = require('./msgTypes')()
 
 function logMsg (type) {
-    return function (msg) {
-        log(getColorMsg(type, msg))
+    return function (msg, original) {
+        log(getColorMsg(type, msg, original))
     }
 }
 
