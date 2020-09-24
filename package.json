@@ -1,5 +1,5 @@
 {
-  "name": "console-hue",
+  "name": "@webdacjs/console-hue",
   "version": "1.0.3",
   "description": "Description ",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "color",
     "debug"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/webdacjs" },
   "author": "Juan Convers",
   "license": "MIT",
   "bugs": {
